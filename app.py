@@ -146,9 +146,10 @@ def main():
         
         st.subheader("Model Settings" if lang_code == "en" else "تنظیمات مدل")
         
-        model_override = st.text_input("Model ID (optional)" if lang_code == "en" else "شناسه مدل (اختیاری)", value=bot_config["model"])
         max_tokens = st.slider("Max Response Length" if lang_code == "en" else "حداکثر طول پاسخ", 1000, 8000, bot_config["max_tokens"], 500)
         web_search = st.checkbox("Enable Web Search" if lang_code == "en" else "فعالسازی جستجوی وب", value=False)
+        
+        model_override = bot_config["model"]
         
         st.divider()
         st.info(f"**Context Window:** {bot_config['context_window']:,} tokens" if lang_code == "en" else f"**پنجره متنی:** {bot_config['context_window']:,} توکن")
