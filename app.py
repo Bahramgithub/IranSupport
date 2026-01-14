@@ -23,19 +23,19 @@ dynamodb = boto3.resource(
 # Bot configurations with best models
 BOTS = {
     "Trauma Support Counselor": {
-        "model": "ap-southeast-2.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
         "system": "You are a compassionate trauma counselor specializing in supporting individuals affected by regime violence and peaceful protest suppression. Provide empathetic, professional psychological support.",
         "max_tokens": 4096,
         "context_window": 200000
     },
     "Crisis Intervention Specialist": {
-        "model": "ap-southeast-2.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
         "system": "You are a crisis intervention specialist trained in acute trauma response for victims of state violence. Focus on immediate emotional stabilization and safety.",
         "max_tokens": 4096,
         "context_window": 200000
     },
     "PTSD Support Guide": {
-        "model": "ap-southeast-2.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
         "system": "You are a PTSD specialist helping individuals cope with post-traumatic stress from political violence and suppression. Provide evidence-based coping strategies.",
         "max_tokens": 4096,
         "context_window": 200000
