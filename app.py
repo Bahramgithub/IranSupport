@@ -147,7 +147,7 @@ def main():
         st.subheader("Model Settings" if lang_code == "en" else "تنظیمات مدل")
         
         max_tokens = st.slider("Max Response Length" if lang_code == "en" else "حداکثر طول پاسخ", 1000, 8000, bot_config["max_tokens"], 500)
-        web_search = st.checkbox("Enable Web Search" if lang_code == "en" else "فعالسازی جستجوی وب", value=False)
+        web_search = st.checkbox("Enable Web Search" if lang_code == "en" else "فعالسازی جستجوی وب", value=True)
         
         model_override = bot_config["model"]
         
