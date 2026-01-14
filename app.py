@@ -224,7 +224,6 @@ def main():
     if lang_code == "en":
         st.markdown("""
         ### 🔒 Privacy & Safety
-        - All conversations are confidential and logged anonymously
         - No authentication required - your privacy is protected
         - This is a support tool, not a replacement for professional therapy
         - In case of immediate danger, please contact local emergency services
@@ -232,7 +231,6 @@ def main():
     else:
         st.markdown("""
         ### 🔒 حریم خصوصی و امنیت
-        - تمام گفتگوها محرمانه و به صورت ناشناس ثبت میشوند
         - نیازی به احراز هویت نیست - حریم خصوصی شما محافظت میشود
         - این یک ابزار حمایتی است، نه جایگزین درمان حرفهای
         - در صورت خطر فوری، با خدمات اورژانس محلی تماس بگیرید
