@@ -2,29 +2,40 @@ import streamlit as st
 import boto3
 import json
 import uuid
+import os
 from datetime import datetime
 from boto3.dynamodb.conditions import Key
 
-# Initialize AWS clients
-bedrock = boto3.client('bedrock-runtime', region_name='us-east-1')
-dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+# Initialize AWS clients with credentials from Streamlit secrets
+bedrock = boto3.client(
+    'bedrock-runtime',
+    region_name=st.secrets.get("AWS_DEFAULT_REGION", "us-east-1"),
+    aws_access_key_id=st.secrets.get("AWS_ACCESS_KEY_ID"),
+    aws_secret_access_key=st.secrets.get("AWS_SECRET_ACCESS_KEY")
+)
+dynamodb = boto3.resource(
+    'dynamodb',
+    region_name=st.secrets.get("AWS_DEFAULT_REGION", "us-east-1"),
+    aws_access_key_id=st.secrets.get("AWS_ACCESS_KEY_ID"),
+    aws_secret_access_key=st.secrets.get("AWS_SECRET_ACCESS_KEY")
+)
 
 # Bot configurations with best models
 BOTS = {
     "Trauma Support Counselor": {
-        "model": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "model": "ap-southeast-2.anthropic.claude-3-5-sonnet-20241022-v2:0",
         "system": "You are a compassionate trauma counselor specializing in supporting individuals affected by regime violence and peaceful protest suppression. Provide empathetic, professional psychological support.",
         "max_tokens": 4096,
         "context_window": 200000
     },
     "Crisis Intervention Specialist": {
-        "model": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "model": "ap-southeast-2.anthropic.claude-3-5-sonnet-20241022-v2:0",
         "system": "You are a crisis intervention specialist trained in acute trauma response for victims of state violence. Focus on immediate emotional stabilization and safety.",
         "max_tokens": 4096,
         "context_window": 200000
     },
     "PTSD Support Guide": {
-        "model": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "model": "ap-southeast-2.anthropic.claude-3-5-sonnet-20241022-v2:0",
         "system": "You are a PTSD specialist helping individuals cope with post-traumatic stress from political violence and suppression. Provide evidence-based coping strategies.",
         "max_tokens": 4096,
         "context_window": 200000
