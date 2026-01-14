@@ -1,7 +1,7 @@
 import boto3
 
 def create_dynamodb_table():
-    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+    dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-2')
     
     table = dynamodb.create_table(
         TableName='trauma-support-logs',
