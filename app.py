@@ -156,7 +156,7 @@ def main():
         st.caption(f"User ID: {user_id[:8]}..." if lang_code == "en" else f"شناسه کاربر: {user_id[:8]}...")
     
     st.title("🤝 Trauma Support Bot - Psychological Counseling Platform" if lang_code == "en" else "🤝 ربات حمایت روانی - پلتفرم مشاوره روانشناسی")
-    st.markdown("*Compassionate AI-powered support for individuals affected by regime violence and peaceful protest suppression*" if lang_code == "en" else "*حمایت هوشمند و دلسوزانه برای افراد آسیب دیده از خشونت رژیم و سرکوب تظاهرات مسالمت آمیز*")
+    st.markdown("*Compassionate AI-powered support for individuals affected by violence and suppression*" if lang_code == "en" else "*حمایت هوشمند و دلسوزانه برای افراد آسیب دیده از خشونت و سرکوب*")
     
     # Main chat area
     col1, col2 = st.columns([2, 1])
