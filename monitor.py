@@ -3,7 +3,7 @@ from datetime import datetime
 import json
 
 def view_logs(user_id=None, limit=50):
-    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+    dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-2')
     table = dynamodb.Table('trauma-support-logs')
     
     if user_id:
@@ -31,7 +31,7 @@ def view_logs(user_id=None, limit=50):
     print(f"Total interactions shown: {len(response['Items'])}")
 
 def get_user_stats():
-    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+    dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-2')
     table = dynamodb.Table('trauma-support-logs')
     
     response = table.scan()
