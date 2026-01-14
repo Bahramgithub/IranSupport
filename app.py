@@ -135,7 +135,7 @@ def main():
     
     # Sidebar configuration
     with st.sidebar:
-        language = st.radio("Language / زبان", ["English", "فارسی"], horizontal=True)
+        language = st.radio("Language / زبان", ["English", "فارسی"], index=1, horizontal=True)
         lang_code = "en" if language == "English" else "fa"
         
         st.header("⚙️ Configuration" if lang_code == "en" else "⚙️ تنظیمات")
